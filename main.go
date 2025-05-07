@@ -3,7 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/csmith/envflag"
+	"github.com/csmith/envflag/v2"
+	"github.com/csmith/slogflags"
 	"io"
 	"log/slog"
 	"net"
@@ -19,19 +20,11 @@ var (
 	tailscaleConfigDir = flag.String("tailscale-config-dir", "config", "path to store tailscale configuration")
 	tailscaleAuthKey   = flag.String("tailscale-auth-key", "", "tailscale auth key for connecting to the network. If blank, interactive auth will be required")
 	upstream           = flag.String("upstream", "", "ip:port of the upstream service to proxy connections to")
-	logLevel           = flag.String("log-level", "info", "level of logs to output")
 )
 
 func main() {
 	envflag.Parse()
-
-	level := slog.Level(0)
-	_ = level.UnmarshalText([]byte(*logLevel))
-
-	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{
-		Level: level,
-	}))
-	slog.SetDefault(logger)
+	logger := slogflags.Logger(slogflags.WithSetDefault(true))
 
 	_, _, err := net.SplitHostPort(*upstream)
 	if err != nil {

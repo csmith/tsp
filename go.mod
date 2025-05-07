@@ -3,7 +3,8 @@ module github.com/csmith/tsp
 go 1.24.2
 
 require (
-	github.com/csmith/envflag v1.0.0
+	github.com/csmith/envflag/v2 v2.0.0
+	github.com/csmith/slogflags v1.0.0
 	tailscale.com v1.82.5
 )
 
