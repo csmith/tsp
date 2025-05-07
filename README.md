@@ -46,6 +46,10 @@ services:
       # For debugging purposes. Default level of "info" should be fine for
       # most use.
       LOG_LEVEL: "debug"
+      
+      # Logs are by default plain text, but you can switch them to JSON if
+      # desired.
+      LOG_FORMAT: "json"
     
     volumes:
       - tailscale:/config
