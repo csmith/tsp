@@ -5,7 +5,7 @@ go 1.24.4
 require (
 	github.com/csmith/envflag/v2 v2.0.0
 	github.com/csmith/slogflags v1.1.0
-	tailscale.com v1.86.4
+	tailscale.com v1.86.5
 )
 
 require (
