@@ -5,7 +5,7 @@ go 1.25.3
 require (
 	github.com/csmith/envflag/v2 v2.0.0
 	github.com/csmith/slogflags v1.1.0
-	tailscale.com v1.90.5
+	tailscale.com v1.90.6
 )
 
 require (
@@ -20,7 +20,7 @@ require (
 	github.com/godbus/dbus/v5 v5.1.1-0.20230522191255-76236955d466 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/google/btree v1.1.2 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/hdevalence/ed25519consensus v0.2.0 // indirect
 	github.com/jsimonetti/rtnetlink v1.4.0 // indirect
