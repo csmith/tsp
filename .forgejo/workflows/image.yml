@@ -1,0 +1,19 @@
+name: build image
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    uses: meta/workflows/.forgejo/workflows/image-build.yml@master
+    runs-on: docker
+    secrets: inherit
+    with:
+      github: csmith/tsp
