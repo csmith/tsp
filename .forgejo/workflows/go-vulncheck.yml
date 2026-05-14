@@ -1,0 +1,13 @@
+name: vuln check 
+
+on:
+  schedule:
+    - cron: '30 */6 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: meta/workflows/.forgejo/workflows/go-vulncheck.yml@master
+    runs-on: docker
