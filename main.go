@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"github.com/csmith/envflag/v2"
@@ -18,8 +19,12 @@ var (
 	tailscaleHost      = flag.String("tailscale-hostname", "tsp", "hostname for tailscale device")
 	tailscalePort      = flag.Int("tailscale-port", 80, "port to listen on for incoming connections from tailscale")
 	tailscaleConfigDir = flag.String("tailscale-config-dir", "config", "path to store tailscale configuration")
-	tailscaleAuthKey   = flag.String("tailscale-auth-key", "", "tailscale auth key for connecting to the network. If blank, interactive auth will be required")
-	upstream           = flag.String("upstream", "", "ip:port of the upstream service to proxy connections to")
+	tailscaleAuthKey   = flag.String(
+		"tailscale-auth-key",
+		"",
+		"tailscale auth key for connecting to the network. If blank, interactive auth will be required",
+	)
+	upstream = flag.String("upstream", "", "ip:port of the upstream service to proxy connections to")
 )
 
 func main() {
@@ -76,7 +81,7 @@ func proxy(connection net.Conn) {
 
 	logger.Debug("Connection accepted")
 
-	up, err := net.Dial("tcp", *upstream)
+	up, err := (&net.Dialer{}).DialContext(context.Background(), "tcp", *upstream)
 	if err != nil {
 		logger.Debug("Error connecting to upstream", "error", err)
 		return
