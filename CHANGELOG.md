@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2 - 2026-11-06
+
+- Dependency updates
+
 ## 1.3.1 - 2026-10-24
 
 - Built with Go 1.27.3, which distrusts compromised intermediate certificates
