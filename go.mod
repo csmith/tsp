@@ -1,11 +1,11 @@
 module github.com/csmith/tsp
 
-go 1.27.1
+go 1.27.3
 
 require (
 	github.com/csmith/envflag/v2 v2.0.0
 	github.com/csmith/slogflags v1.2.0
-	tailscale.com v1.104.1
+	tailscale.com v1.104.2
 )
 
 require (
