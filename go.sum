@@ -1,7 +1,7 @@
 9fans.net/go v0.0.8-0.20250307142834-96bdba94b63f h1:1C7nZuxUMNz7eiQALRfiqNOm04+m3edWlRff/BYHf0Q=
 9fans.net/go v0.0.8-0.20250307142834-96bdba94b63f/go.mod h1:hHyrZRryGqVdqrknjq5OWDLGCTJ2NeEvtrpR96mjraM=
-chameth.com/x v0.0.1 h1:h6XkQ9uyOkiEXiNbEb/l0fLDctM46rZw1sgNHs8PRfY=
-chameth.com/x v0.0.1/go.mod h1:L205DjGmjy5l12zEnb0JNHPGMDS+YOfxKzD6tU8tigI=
+chameth.com/x v0.0.2 h1:EO+uaBZvIx2Pjc7TJMj1COxum1q7NyMn4JlVzOQA8TE=
+chameth.com/x v0.0.2/go.mod h1:L205DjGmjy5l12zEnb0JNHPGMDS+YOfxKzD6tU8tigI=
 filippo.io/edwards25519 v1.2.0 h1:crnVqOiS4jqYleHd9vaKZ+HKtHfllngJIiOpNpoJsjo=
 filippo.io/edwards25519 v1.2.0/go.mod h1:xzAOLCNug/yB62zG1bQ8uziwrIqIuxhctzJT18Q77mc=
 filippo.io/mkcert v1.4.4 h1:8eVbbwfVlaqUM7OwuftKc2nuYOoTDQWqsoXmzoXZdbc=
