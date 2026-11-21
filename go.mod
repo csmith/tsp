@@ -10,6 +10,7 @@ require (
 
 require (
 	filippo.io/edwards25519 v1.2.0 // indirect
+	github.com/Songmu/gocredits v1.1.0 // indirect
 	github.com/akutz/memconn v0.1.0 // indirect
 	github.com/alexbrainman/sspi v0.0.0-20250919150558-7d374ff0d59e // indirect
 	github.com/coder/websocket v1.8.15 // indirect
@@ -54,3 +55,5 @@ require (
 	gvisor.dev/gvisor v0.0.0-20260915211658-a6f909f08a72 // indirect
 	tailscale.com v1.104.5 // indirect
 )
+
+tool github.com/Songmu/gocredits/cmd/gocredits
