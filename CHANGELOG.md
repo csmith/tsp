@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Dependency updates
+
 ## 1.3.3 - 2026-11-12
 
 - Update to Go 1.27.4

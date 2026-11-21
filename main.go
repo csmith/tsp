@@ -1,6 +1,7 @@
 package main
 
 import (
+	"chameth.com/x/tailscale"
 	"context"
 	"flag"
 	"fmt"
@@ -12,7 +13,6 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"tailscale.com/tsnet"
 )
 
 var (
@@ -37,13 +37,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	serv := tsnet.Server{
-		Hostname: *tailscaleHost,
-		Dir:      *tailscaleConfigDir,
-		AuthKey:  *tailscaleAuthKey,
-		UserLogf: slog.NewLogLogger(slog.Default().Handler(), slog.LevelInfo).Printf,
-		Logf:     slog.NewLogLogger(slog.Default().Handler(), slog.LevelDebug).Printf,
-	}
+	serv := tailscale.NewServer(*tailscaleHost, *tailscaleConfigDir, *tailscaleAuthKey)
 
 	listener, err := serv.Listen("tcp", fmt.Sprintf(":%d", *tailscalePort))
 	if err != nil {
