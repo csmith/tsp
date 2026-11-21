@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Fix a flood of connection errors being logged at shutdown
 - Dependency updates
 
 ## 1.3.3 - 2026-11-12

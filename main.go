@@ -3,6 +3,7 @@ package main
 import (
 	"chameth.com/x/tailscale"
 	"context"
+	"errors"
 	"flag"
 	"fmt"
 	"github.com/csmith/envflag/v2"
@@ -13,6 +14,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 )
 
 var (
@@ -50,8 +52,12 @@ func main() {
 	go func() {
 		for {
 			conn, err := listener.Accept()
+			if errors.Is(err, net.ErrClosed) {
+				return
+			}
 			if err != nil {
 				logger.Warn("Error accepting connection", "error", err)
+				time.Sleep(time.Second)
 				continue
 			}
 
