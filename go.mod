@@ -3,7 +3,7 @@ module github.com/csmith/tsp
 go 1.27.4
 
 require (
-	chameth.com/x v0.0.1
+	chameth.com/x v0.0.2
 	github.com/csmith/envflag/v2 v2.0.0
 	github.com/csmith/slogflags v1.2.0
 )
